@@ -11,7 +11,13 @@ def do_something():
 
 proccess = []
 
-for _ in range
+for _ in range(10):
+    p = multiprocessing.Process(target=do_something)
+    p.start()
+    proccess.append(p)
+
+for proccesses in proccess:
+    proccesses.join()
 
 
 finish = time.perf_counter()
